@@ -5,12 +5,12 @@ export default function Home() {
     <div className="min-h-[calc(100vh-64px)] flex flex-col items-center justify-center p-4 relative overflow-hidden bg-[#0a0a0f]">
       <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e1e2e_1px,transparent_1px),linear-gradient(to_bottom,#1e1e2e_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_50%,#000_70%,transparent_100%)] opacity-20 pointer-events-none"></div>
       
-      <div className="z-10 text-center max-w-4xl mx-auto space-y-8">
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
+      <div className="z-10 text-center max-w-4xl mx-auto space-y-6">
+        <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-500">
           Digital Forensic Analysis System
         </h1>
         
-        <p className="text-lg md:text-xl text-slate-400 max-w-2xl mx-auto">
+        <p className="text-base md:text-lg text-slate-400 max-w-2xl mx-auto">
           Detect copy-move forgery, AI manipulation, and document tampering using SIFT + ELA + Neural Analysis
         </p>
         
