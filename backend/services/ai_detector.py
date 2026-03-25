@@ -5,10 +5,10 @@ from skimage.feature import local_binary_pattern
 from services.ela_detector import perform_ela
 
 def detect_ai_manipulation(image_path: str, output_dir: str) -> dict:
-    \"\"\"
+    """
     Detects AI-generated or AI-edited images using ELA, noise analysis, 
     frequency domain artifacts, and edge consistency.
-    \"\"\"
+    """
     try:
         findings = []
         

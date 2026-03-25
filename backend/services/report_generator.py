@@ -7,12 +7,12 @@ from reportlab.lib.styles import getSampleStyleSheet, ParagraphStyle
 from reportlab.lib.units import inch
 
 def generate_pdf_report(case_id: str, case_data: dict, result_data: dict, output_dir: str) -> str:
-    \"\"\"
+    """
     Generates a professional forensic PDF report using ReportLab.
     
     case_data: dict containing case_number, title, created_at
     result_data: dict containing analysis_type, forgery_detected, confidence_score, detection_methods, findings, heatmap_path, annotated_image_path, evidence (filename, file_size, etc)
-    \"\"\"
+    """
     os.makedirs(output_dir, exist_ok=True)
     report_path = os.path.join(output_dir, f"report_{case_id}.pdf")
     

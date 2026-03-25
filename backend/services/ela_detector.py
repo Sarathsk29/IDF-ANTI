@@ -4,9 +4,9 @@ import numpy as np
 from PIL import Image, ImageChops, ImageEnhance
 
 def perform_ela(image_path: str, output_dir: str, quality: int = 90) -> dict:
-    \"\"\"
+    """
     Performs Error Level Analysis (ELA) on an image to detect potential manipulations.
-    \"\"\"
+    """
     try:
         # 1. Open image with Pillow
         original_img = Image.open(image_path).convert("RGB")

@@ -3,9 +3,9 @@ import cv2
 import numpy as np
 
 def detect_copy_move(image_path: str, output_dir: str) -> dict:
-    \"\"\"
+    """
     Detects copy-move forgery in an image using SIFT keypoint matching and RANSAC.
-    \"\"\"
+    """
     try:
         # 1. Load image, convert to grayscale
         img = cv2.imread(image_path)

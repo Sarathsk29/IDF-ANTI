@@ -6,9 +6,9 @@ from PIL import Image
 import cv2
 
 def analyze_document(file_path: str, output_dir: str) -> dict:
-    \"\"\"
+    """
     Analyzes a document (PDF or image) for signs of forgery using OCR and metadata extraction.
-    \"\"\"
+    """
     try:
         is_pdf = file_path.lower().endswith(".pdf")
         
