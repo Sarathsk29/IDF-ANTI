@@ -17,13 +17,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang=\"en\" className=\"dark\">
+    <html lang="en" className="dark">
       <body className={`${inter.variable} ${jetbrains.variable} font-sans bg-[#0a0a0f] text-slate-200 min-h-screen flex flex-col`}>
         <Navbar />
-        <main className=\"flex-1\">
+        <main className="flex-1">
           {children}
         </main>
-        <footer className=\"border-t border-[#1e1e2e] bg-[#0a0a0f] py-6 text-center text-sm text-slate-500\">
+        <footer className="border-t border-[#1e1e2e] bg-[#0a0a0f] py-6 text-center text-sm text-slate-500">
           <p>Academic Project | MCA Final Year | Digital Forensics</p>
         </footer>
       </body>

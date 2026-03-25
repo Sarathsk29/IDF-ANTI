@@ -42,25 +42,25 @@ export const ForensicReport = ({
 
   if (!isCompleted) {
     return (
-      <div className=\"w-full flex flex-col items-center justify-center p-12 bg-[#111118] border border-[#1e1e2e] rounded-lg\">
-        <svg className=\"animate-spin h-10 w-10 text-blue-500 mb-4\" fill=\"none\" viewBox=\"0 0 24 24\">
-          <circle className=\"opacity-25\" cx=\"12\" cy=\"12\" r=\"10\" stroke=\"currentColor\" strokeWidth=\"4\"></circle>
-          <path className=\"opacity-75\" fill=\"currentColor\" d=\"M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z\"></path>
+      <div className="w-full flex flex-col items-center justify-center p-12 bg-[#111118] border border-[#1e1e2e] rounded-lg">
+        <svg className="animate-spin h-10 w-10 text-blue-500 mb-4" fill="none" viewBox="0 0 24 24">
+          <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+          <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
         </svg>
-        <h3 className=\"text-lg font-medium text-slate-200 mb-2\">Analysis in Progress</h3>
-        <p className=\"text-slate-400 text-sm\">Our models are analyzing the evidence. This may take a few moments.</p>
+        <h3 className="text-lg font-medium text-slate-200 mb-2">Analysis in Progress</h3>
+        <p className="text-slate-400 text-sm">Our models are analyzing the evidence. This may take a few moments.</p>
       </div>
     );
   }
 
   return (
-    <div className=\"w-full bg-[#111118] border border-[#1e1e2e] rounded-lg overflow-hidden\">
+    <div className="w-full bg-[#111118] border border-[#1e1e2e] rounded-lg overflow-hidden">
       {/* Header Banner */}
       <div className={`p-6 border-b ${isForged ? 'bg-red-900/20 border-red-900/50' : 'bg-green-900/20 border-green-900/50'}`}>
-        <div className=\"flex flex-col md:flex-row justify-between items-center gap-4\">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           <div>
-            <h2 className=\"text-xl font-bold text-white mb-1\">FORENSIC ANALYSIS REPORT</h2>
-            <div className=\"flex items-center text-sm gap-2 text-slate-400 font-mono\">
+            <h2 className="text-xl font-bold text-white mb-1">FORENSIC ANALYSIS REPORT</h2>
+            <div className="flex items-center text-sm gap-2 text-slate-400 font-mono">
               <span>{caseData.case_number}</span>
               <span>&bull;</span>
               <span>{result.analysis_type.replace('_', ' ').toUpperCase()}</span>
@@ -70,34 +70,34 @@ export const ForensicReport = ({
           </div>
           <button 
             onClick={handleDownload}
-            className=\"flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded shadow transition-colors\"
+            className="flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-500 text-white font-medium rounded shadow transition-colors"
           >
-            <svg className=\"w-4 h-4\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">
-              <path strokeLinecap=\"round\" strokeLinejoin=\"round\" strokeWidth={2} d=\"M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4\" />
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
             <span>Download PDF</span>
           </button>
         </div>
         
-        <div className=\"mt-8 flex flex-col md:flex-row items-center justify-between gap-8\">
-          <div className=\"text-center md:text-left\">
-            <p className=\"text-sm text-slate-400 font-medium mb-1\">FINAL VERDICT</p>
+        <div className="mt-8 flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="text-center md:text-left">
+            <p className="text-sm text-slate-400 font-medium mb-1">FINAL VERDICT</p>
             <h1 className={`text-4xl font-extrabold tracking-tight ${isForged ? 'text-red-500' : 'text-green-500'}`}>
               {isForged ? 'TAMPERED / MANIPULATED' : 'AUTHENTIC / VERIFIED'}
             </h1>
           </div>
           
-          <div className=\"w-full md:max-w-xs\">
+          <div className="w-full md:max-w-xs">
             <ConfidenceBar score={result.confidence_score || 0} />
           </div>
         </div>
       </div>
       
       {/* Content */}
-      <div className=\"p-6 space-y-8\">
+      <div className="p-6 space-y-8">
         {/* Visualizer */}
         {result.analysis_type !== 'document_forgery' && (
-          <div className=\"space-y-4\">
+          <div className="space-y-4">
             <HeatmapViewer 
               originalUrl={originalUrl}
               heatmapUrl={getFullUrl(result.heatmap_path)}
@@ -106,26 +106,26 @@ export const ForensicReport = ({
           </div>
         )}
         
-        <div className=\"grid grid-cols-1 md:grid-cols-3 gap-8\">
-          <div className=\"md:col-span-1 space-y-6\">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="md:col-span-1 space-y-6">
             <div>
-              <h3 className=\"text-sm font-medium text-slate-300 mb-3 border-b border-[#1e1e2e] pb-2\">Evidentiary File</h3>
+              <h3 className="text-sm font-medium text-slate-300 mb-3 border-b border-[#1e1e2e] pb-2">Evidentiary File</h3>
               {originalFile ? (
-                <div className=\"space-y-1 text-sm\">
-                  <p className=\"text-slate-200 font-medium break-all\">{originalFile.original_filename}</p>
-                  <p className=\"text-slate-500 font-mono\">{(originalFile.file_size / 1024).toFixed(2)} KB</p>
-                  <p className=\"text-slate-500 font-mono\">{originalFile.file_type}</p>
+                <div className="space-y-1 text-sm">
+                  <p className="text-slate-200 font-medium break-all">{originalFile.original_filename}</p>
+                  <p className="text-slate-500 font-mono">{(originalFile.file_size / 1024).toFixed(2)} KB</p>
+                  <p className="text-slate-500 font-mono">{originalFile.file_type}</p>
                 </div>
               ) : (
-                <p className=\"text-slate-500 text-sm\">File metadata unavailable</p>
+                <p className="text-slate-500 text-sm">File metadata unavailable</p>
               )}
             </div>
             
             <div>
-              <h3 className=\"text-sm font-medium text-slate-300 mb-3 border-b border-[#1e1e2e] pb-2\">Detection Methods</h3>
-              <div className=\"flex flex-wrap gap-2\">
+              <h3 className="text-sm font-medium text-slate-300 mb-3 border-b border-[#1e1e2e] pb-2">Detection Methods</h3>
+              <div className="flex flex-wrap gap-2">
                 {result.detection_methods?.map((m, idx) => (
-                  <span key={idx} className=\"px-2 py-1 bg-[#1e1e2e] text-slate-300 border border-[#2a2a3e] rounded text-xs\">
+                  <span key={idx} className="px-2 py-1 bg-[#1e1e2e] text-slate-300 border border-[#2a2a3e] rounded text-xs">
                     {m}
                   </span>
                 ))}
@@ -133,11 +133,11 @@ export const ForensicReport = ({
             </div>
           </div>
           
-          <div className=\"md:col-span-2 space-y-4\">
-            <h3 className=\"text-sm font-medium text-slate-300 mb-2 border-b border-[#1e1e2e] pb-2\">Forensic Findings</h3>
+          <div className="md:col-span-2 space-y-4">
+            <h3 className="text-sm font-medium text-slate-300 mb-2 border-b border-[#1e1e2e] pb-2">Forensic Findings</h3>
             
             {result.findings && result.findings.length > 0 ? (
-              <ul className=\"space-y-3\">
+              <ul className="space-y-3">
                 {result.findings.map((f, i) => {
                   let indicator = 'M'; // Medium
                   let colorClass = 'text-amber-500 bg-amber-500/10 border-amber-500/20';
@@ -151,17 +151,17 @@ export const ForensicReport = ({
                   }
 
                   return (
-                    <li key={i} className=\"flex items-start gap-3 bg-[#0a0a0f] p-3 rounded border border-[#1e1e2e]\">
+                    <li key={i} className="flex items-start gap-3 bg-[#0a0a0f] p-3 rounded border border-[#1e1e2e]">
                       <span className={`shrink-0 w-6 h-6 flex justify-center items-center text-[10px] font-bold rounded border ${colorClass}`}>
                         {indicator}
                       </span>
-                      <span className=\"text-sm text-slate-300\">{f}</span>
+                      <span className="text-sm text-slate-300">{f}</span>
                     </li>
                   )
                 })}
               </ul>
             ) : (
-              <p className=\"text-sm text-slate-500\">No detailed findings recorded.</p>
+              <p className="text-sm text-slate-500">No detailed findings recorded.</p>
             )}
           </div>
         </div>

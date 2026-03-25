@@ -1,4 +1,4 @@
-export type CaseStatus = \"open\" | \"closed\" | \"pending\";
+export type CaseStatus = "open" | "closed" | "pending";
 
 export interface Evidence {
   id: string;
@@ -13,8 +13,8 @@ export interface AnalysisResult {
   id: string;
   evidence_id: string;
   case_id: string;
-  analysis_type: string; // \"image_forgery\" | \"document_forgery\" | \"ai_detection\"
-  status: string;        // \"processing\" | \"completed\" | \"failed\"
+  analysis_type: string; // "image_forgery" | "document_forgery" | "ai_detection"
+  status: string;        // "processing" | "completed" | "failed"
   forgery_detected: boolean | null;
   confidence_score: number | null;
   detection_methods: string[] | null;

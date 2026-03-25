@@ -26,7 +26,7 @@ export const AnalysisTypeSelector = ({
   ];
 
   return (
-    <div className=\"grid gap-4\">
+    <div className="grid gap-4">
       {types.map((type) => (
         <div 
           key={type.id}
@@ -37,15 +37,15 @@ export const AnalysisTypeSelector = ({
           }`}
           onClick={() => onSelect(type.id)}
         >
-          <div className=\"flex items-center gap-3 mb-2\">
+          <div className="flex items-center gap-3 mb-2">
             <div className={`w-4 h-4 rounded-full border flex items-center justify-center ${
               selectedType === type.id ? 'border-blue-500' : 'border-slate-500'
             }`}>
-              {selectedType === type.id && <div className=\"w-2 h-2 rounded-full bg-blue-500\" />}
+              {selectedType === type.id && <div className="w-2 h-2 rounded-full bg-blue-500" />}
             </div>
-            <h3 className=\"font-bold text-slate-200\">{type.title}</h3>
+            <h3 className="font-bold text-slate-200">{type.title}</h3>
           </div>
-          <p className=\"text-sm text-slate-400 pl-7\">{type.desc}</p>
+          <p className="text-sm text-slate-400 pl-7">{type.desc}</p>
         </div>
       ))}
     </div>
