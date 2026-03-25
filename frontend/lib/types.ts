@@ -6,6 +6,7 @@ export interface Evidence {
   original_filename: string;
   file_type: string;
   file_size: number;
+  file_path: string;
   uploaded_at: string;
 }
 
